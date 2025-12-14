@@ -105,5 +105,50 @@
         
         <p>Currently, I'm pursuing my degree program at ASTU.</p>
     </section>
+<section>
+        <h2>Contact Me</h2>
+        <p>Wanna send a message!</p>
+        
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+<input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Your Message:</label>
+                <textarea id="message" rows="5" placeholder="Type your message here..." required></textarea>
+            </div>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Eman. Created for HTML Mini Project.</p>
+        <p>Connect with me on GitHub!</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                alert('Thank you, ' + name + '! Your message has been sent.');
+                document.getElementById('contactForm').reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
 </body>
 </html>
